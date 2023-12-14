@@ -6,7 +6,12 @@ All models are in ONNX format, compatible with the latest Raidionics version (v1
  * Preoperative glioblastoma, diffuse low-grade glioma, meningioma, and metastasis segmentation: the models have been described in [Preoperative Brain Tumor Imaging: Models and Software for Segmentation and Standardized Reporting](https://www.frontiersin.org/articles/10.3389/fneur.2022.932219/full?&utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field=&journalName=Frontiers_in_Neurology&id=932219)
  * "_multiclass" models, trained with the AGU-Net architecture over the [BraTS challenges' datasets](https://www.synapse.org/#!Synapse:syn51156910/wiki/), and providing three output labels: contrast-enhancing tumor, necrosis, and edema.
 
- * Early postoperative glioblastoma segmentation: multiple models leveraging different sets of inputs, introduced in [Segmentation of glioblastomas in early post-operative multi-modal MRI with deep neural networks](https://arxiv.org/abs/2304.08881).
+ * Early postoperative glioblastoma segmentation: multiple models leveraging different sets of full-volume inputs, introduced in [Segmentation of glioblastomas in early post-operative multi-modal MRI with deep neural networks](https://arxiv.org/abs/2304.08881).
+     * MRI_GBM_Postop_FV_1p model: Uses one MR sequence as input: postop T1-CE.
+     * MRI_GBM_Postop_FV_2p model: Uses two MR sequences as inputs: postop T1-CE, postop T1-w.
+     * MRI_GBM_Postop_FV_3p model: Uses three MR sequences as inputs: postop T1-CE, postop T1-w, postop FLAIR.
+     * MRI_GBM_Postop_FV_4p model: Uses three MR sequences and a prediction as inputs: postop T1-CE, postop T1-w, preop T1-CE, preop tumor mask.
+     * MRI_GBM_Postop_FV_5p model: Uses four MR sequences and a predictions as inputs: postop T1-CE, postop T1-w, postop FLAIR, preop T1-CE, preop tumor mask.
 
  * Sequence classification: not validated nor introduced in any previous publication yet. Classifies between T1-weighted (T1w), gadolinium-enhanced T1-weighted (T1w-CE), T2-weighted fluid attenuated inversion recovery (FLAIR), and T2-weighted (T2).
 
